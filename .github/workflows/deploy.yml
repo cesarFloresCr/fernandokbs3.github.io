@@ -28,6 +28,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: Build
     
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment-pages.outputs.page_url }}
+    
     steps: 
       - name: deploy
-        run: echo "deploy..."
+        id: deployment-pages
+        uses: actions/deploy-pages@v4
