@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Say Hello
-        run: echo "Workflow started"
-      - name: Print variable
-        run: echo "${{ secrets.NAME }}"
+      - name: setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
