@@ -48,6 +48,8 @@ jobs:
     steps:
       - name: notify to slack
         uses: 8398a7/action-slack@v3
+        env: #ADD SECRET TO REPO WITH THE NAME THAT IS MENTIONED BELOW
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL}}
         with:
           status: ${{ job.status }}
           fields: repo,commit,author,job,took
